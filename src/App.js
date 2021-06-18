@@ -1,25 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import Tickets from './components/tickets/tickets'
+import { connect } from 'react-redux';
+import logo from './assets/logo.svg'
+import Sidebar from './components/sidebar/sidebar'
+import Filters from './components/filters/filters'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="App-wrapper">
+        <div className="header">
+          <img src={logo} alt="logo" />
+        </div>
+        <div className="main">
+          <Sidebar />
+          <div className="section">
+            <Filters />
+            <Tickets />
+          </div>
+        </div>
+
+      </div>
     </div>
   );
 }
 
-export default App;
+export default connect()(App);

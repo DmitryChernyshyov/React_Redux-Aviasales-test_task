@@ -1,7 +1,16 @@
+* {
+  box-sizing: border-box;
+}
 .App {
   text-align: center;
+  background: #F3F7FA;
+  color: #4a4a4a
 }
-
+.App-wrapper {
+  max-width: 757px;
+  margin: auto;
+  min-height: 100vh;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -36,3 +45,14 @@
     transform: rotate(360deg);
   }
 }
+.header {
+  padding: 50px;
+  text-align: center;
+}
+.main {
+  display: flex;
+}
+.section {
+  margin-left: 30px;
+}
+

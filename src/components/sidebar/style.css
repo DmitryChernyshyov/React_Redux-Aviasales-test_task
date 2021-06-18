@@ -1,0 +1,56 @@
+.sidebar {
+    font-size: 13px;
+    margin-top: 20px;
+    padding: 10px 20px 20px 20px;
+    max-height: 252px;
+    max-width: 232px;
+    text-align: left;
+    background-color: #ffffff;
+    border-radius: 5px;
+    color: #4a4a4a;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0,0.1);
+  }
+  .sidebar h3 {
+    font-size: 12px;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 12px;
+  }
+  .sidebar form {
+    font-weight: 400;
+    text-transform: none;
+    margin: 0 -20px;
+  }
+  .sidebar label {
+    position: relative;
+    cursor: pointer;
+    display: block;
+    padding: 10px 20px 10px 50px;
+  }
+  .input {}
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+  }
+  .checker {
+    display: inline-block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-image: url(../../assets/checkbox.svg);
+    margin-left: -30px;
+  }
+  
+  .input:checked + .checker {
+    background-image: url(../../assets/checkboxon.svg);
+  } 
