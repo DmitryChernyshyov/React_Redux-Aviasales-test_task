@@ -57,22 +57,20 @@ export function ticketFilter(tickets,typeofsort){
   }
 }
 // функция фильтрации по кол пересадок 
-// есть массив с количеством пересадок выбранных пользователем и если количество совпадает с пересадками в билете то выводим 
-// соответсвенно если чекбокс chechek false то удаляем из массива фильтр
-// не идельно но работает будет время можно arrayofcheked  избежать и уменьшить кол принимаемых значений
 export function checkfilters(checked,id,ticket,checkedfilters,typesort) {
   let arrayofcheked = []
   if(checked){
-  // заполнения массива если добавляем фильтр
+  // заполнения массива фильтров если добавляем фильтр
     arrayofcheked = [...checkedfilters,...id]
   }else{
-    // очищение массива если снимаем фильтр
+    // очищение массива фильтров если снимаем фильтр
     id.length === 4? arrayofcheked = []
     :arrayofcheked = [...checkedfilters.filter((item)=>{
        return item !== id[0]
     })]
  
   }
+  // получаем только те билеты где пересадки подхотяд под наш массив фильтров
   let sorted = ticket.filter((item)=>{
       return(
           arrayofcheked.indexOf(item.segments[0].stops.length) !== -1 && arrayofcheked.indexOf(item.segments[1].stops.length) !== -1 
