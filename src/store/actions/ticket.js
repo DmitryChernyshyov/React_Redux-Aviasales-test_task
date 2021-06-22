@@ -63,8 +63,10 @@ export function ticketFilter(tickets,typeofsort){
 export function checkfilters(checked,id,ticket,checkedfilters,typesort) {
   let arrayofcheked = []
   if(checked){
+  // заполнения массива если добавляем фильтр
     arrayofcheked = [...checkedfilters,...id]
   }else{
+    // очищение массива если снимаем фильтр
     id.length === 4? arrayofcheked = []
     :arrayofcheked = [...checkedfilters.filter((item)=>{
        return item !== id[0]
