@@ -24,9 +24,6 @@ export function fetchTicket() {
     dispatch(fetchTicketSuccess())
   }
 }
-export function sidebarcheckhaldle(){
-
-}
 /// отправляем запросы пока не придёт stop true и обновляем state (привязана к state в useEffect)
 export function fetchTicketBySearchId(searchId,stopfetch) {
   return async dispatch => {
@@ -39,12 +36,12 @@ export function fetchTicketBySearchId(searchId,stopfetch) {
                   :dispatch(fetchTicketError(error));
         })
         if(response){
-        let ticketpart =  response.data;
-        dispatch(TicketSetState([...ticketpart.tickets]));
-        if (ticketpart.stop){
-          dispatch(stopFetch());
-        }
-        }      
+          let ticketpart =  response.data;
+          dispatch(TicketSetState([...ticketpart.tickets]));
+          if (ticketpart.stop){
+            dispatch(stopFetch());
+          }
+        }       
       }
     getpartsofticket(); 
     }
@@ -54,7 +51,9 @@ export function ticketFilter(tickets,typeofsort){
   return dispatch => {
     typeofsort !== "faster"?
     dispatch(sortedTicktetsSetState(tickets.sort((a,b)=>a['price']-b['price']).slice(0,5)))
-    :dispatch(sortedTicktetsSetState(tickets.sort((a,b)=>(a['segments']['0']['duration']+a['segments']['1']['duration'])-(b['segments']['0']['duration']+b['segments']['1']['duration'])).slice(0,5)))
+    :dispatch(sortedTicktetsSetState(tickets.sort((a,b)=>(
+      a['segments']['0']['duration']+a['segments']['1']['duration'])-(b['segments']['0']['duration']+b['segments']['1']['duration']))
+      .slice(0,5)))
   }
 }
 // функция фильтрации по кол пересадок 
