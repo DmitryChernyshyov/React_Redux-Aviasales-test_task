@@ -66,17 +66,16 @@ export function checkfilters(checked,id,ticket,checkedfilters,typesort) {
     arrayofcheked = [...checkedfilters,...id]
   }else{
     id.length === 4? arrayofcheked = []
-    :arrayofcheked = [...checkedfilters.map((item)=>{
-      return item === id[0]? null: item
+    :arrayofcheked = [...checkedfilters.filter((item)=>{
+       return item !== id[0]
     })]
  
   }
   let sorted = ticket.filter((item)=>{
-    if(arrayofcheked.indexOf(item.segments[0].stops.length) !== -1 && arrayofcheked.indexOf(item.segments[1].stops.length) !== -1 ){
       return(
-          item
+          arrayofcheked.indexOf(item.segments[0].stops.length) !== -1 && arrayofcheked.indexOf(item.segments[1].stops.length) !== -1 
       )
-    }})
+    })
   return dispatch => {
     dispatch(checkfiltersSetState(arrayofcheked))
     dispatch(sheckedtickets(sorted))
