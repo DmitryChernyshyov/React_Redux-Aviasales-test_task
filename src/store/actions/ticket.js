@@ -64,13 +64,26 @@ export function checkfilters(checked,id,ticket,checkedfilters,typesort) {
   // заполнения массива фильтров если добавляем фильтр
     arrayofcheked = [...checkedfilters,...id]
   }else{
+
     // очищение массива фильтров если снимаем фильтр
-    id.length === 4? arrayofcheked = []
-    :arrayofcheked = [...checkedfilters.filter((item)=>{
-       return item !== id[0]
-    })]
+    if(id.length === 4) {
+      const inputs =  document.getElementsByClassName("input");
+      for(let input of inputs)
+      {
+        console.log(input);
+        input["checked"] = false;
+      }
+      arrayofcheked = []
+    }
+    else{
+      arrayofcheked = [...checkedfilters.filter((item)=>{
+         return item !== id[0]
+      })]
+    }
  
   }
+
+
   // получаем только те билеты где пересадки подхотяд под наш массив фильтров
   let sorted = ticket.filter((item)=>{
       return(
