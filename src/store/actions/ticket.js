@@ -47,6 +47,7 @@ export function fetchTicketBySearchId(searchId,stopfetch) {
     }
   }
 }
+// функция сортировки по цене или длительности 
 export function ticketFilter(tickets,typeofsort){
   return dispatch => {
     typeofsort !== "faster"?
