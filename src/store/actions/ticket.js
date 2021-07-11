@@ -87,7 +87,7 @@ export function checkfilters(checked,id,ticket,checkedfilters,typesort) {
   // получаем только те билеты где пересадки подхотяд под наш массив фильтров
   let sorted = ticket.filter((item)=>{
       return(
-          arrayofcheked.indexOf(item.segments[0].stops.length) !== -1 && arrayofcheked.indexOf(item.segments[1].stops.length) !== -1 
+          (arrayofcheked.indexOf(item.segments[0].stops.length) !== -1 && arrayofcheked.indexOf(item.segments[1].stops.length) !== -1)
       )
     })
   return dispatch => {

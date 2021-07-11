@@ -1,44 +1,44 @@
 .filter_wrapper { 
-    display: flex;
-    min-width: 512px;
-    justify-content: space-between;
-    font-family: Open Sans;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 12px;
-    line-height: 20px;
-    align-items: center;
-    text-align: center;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-  }
-  .filter__lowprice, .filter__faster {
-    background: #fff;
-    border: 1px solid #dfe5ec;
-    text-align: center;
-    line-height: 50px;
-    width: 50%;
-  
-  }
-  .active {
-    background: #2196f3;
-    color: #fff;
-    border: 0;
-    cursor: pointer;
-  }
-  .filter__lowprice {
-    border-radius: 5px 0 0 5px;
-    border-right: 0;
-  }
-  
-  .filter__faster { 
-    border-radius: 0 5px 5px 0;
-    border-left: 0;
-  }
-  
-  .filter__lowprice:hover, .filter__faster:hover {
-    background: #2196f3;
-    color: #fff;
-    border: 0;
-    cursor: pointer;
-  }
+  display: flex;
+  min-width: 512px;
+  justify-content: space-between;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 20px;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+.filter__lowprice, .filter__faster {
+  background: #fff;
+  border: 1px solid #dfe5ec;
+  text-align: center;
+  line-height: 50px;
+  width: 50%;
+
+}
+.active {
+  background: #2196f3;
+  color: #fff;
+  border: 0;
+  cursor: pointer;
+}
+.filter__lowprice {
+  border-radius: 5px 0 0 5px;
+  border-right: 0;
+}
+
+.filter__faster { 
+  border-radius: 0 5px 5px 0;
+  border-left: 0;
+}
+
+.filter__lowprice:hover, .filter__faster:hover {
+  background: #2196f3;
+  color: #fff;
+  border: 0;
+  cursor: pointer;
+}

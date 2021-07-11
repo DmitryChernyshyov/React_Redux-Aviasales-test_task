@@ -6,7 +6,7 @@ export default props =>{
                 <div className="ticket__data__item">
                     <p className="ticket__data__item__grey">{props.segments.origin} - {props.segments.destination}</p>
                     <p>
-                        {/* Форматирование даты и вычесление времени прибывания (можно переписать если будет время) */}
+                        {/* Форматирование даты и вычесление времени прибывания*/}
                         {
                             new Date(props.segments.date).getHours() + 
                             ":" +

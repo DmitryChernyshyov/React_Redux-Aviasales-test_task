@@ -20,14 +20,18 @@ const Tickets = props =>{
         props.ticketsFilter(props.ticket,props.typesort);
         props.sheckedtickets(props.ticket);
     }, [props.stopfetch])
-    
+    // вывод тикетов
     return(
         <div className="wrapper-tickets">       
-            {!props.loading? props.sortedtickets.map((item,index)=>{
+            {!props.loading?
+            props.sortedtickets.length>0?
+            props.sortedtickets.map((item,index)=>{
                 return(
                     <Ticket key={index} item={item}/>
                 )
-            }):<Loader/>}
+            })
+            :<div>Нет данных с заданными фильтрами</div>
+            :<Loader/>}
         </div>
     )
 }

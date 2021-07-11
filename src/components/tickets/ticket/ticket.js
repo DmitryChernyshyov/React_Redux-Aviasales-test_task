@@ -6,8 +6,7 @@ export default props => {
             <div className="ticket">
                 <div className="ticket__header">
                     <div className="ticket__price">
-                        {/* не лучший способ раставить пробелы каждые 3 симлова с конца но какой есть 
-                        хотя вроде довольно не плохой  не знаю можно ли избавиться от преобразований)*/}
+                        {/* проставляем пробел каждые 3 символа с конца)*/}
                         {props.item.price.toString().split("").reverse().join().replace(/[^\dA-Z]/g, '').replace(/(.{3})/g, '$1 ').split("").reverse().join("")} Р
                     </div>
                     <div className="ticket__logo">
